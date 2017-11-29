@@ -20,7 +20,7 @@ $(document).ready(function() {
 
 	$('#unfollow_btn').hover(function() {
 		// Hovering
-		$(this).removeClass('btn-success');
+		$(this).removeClass('btn-primary');
 		$(this).addClass('btn-danger');
 		$(this).html("Unfollow");
 
@@ -28,7 +28,7 @@ $(document).ready(function() {
 		// No longer hovering
 		$(this).html("Following");
 		$(this).removeClass('btn-danger');
-		$(this).addClass('btn-success');
+		$(this).addClass('btn-primary');
 	});
 
 });

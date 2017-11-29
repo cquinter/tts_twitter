@@ -16,4 +16,6 @@ Rails.application.routes.draw do
 
   post "/tweet/create" => "tweet#create", as: :create_tweet
 
+  delete "/tweet/delete" => "tweet#delete", as: :delete_tweet
+
 end

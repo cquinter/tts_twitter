@@ -19,7 +19,6 @@ gem 'jquery-rails'
 # we added this to generate user data
 gem 'faker', :git => 'git://github.com/stympy/faker.git', :branch => 'master'
 
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.4'
 
@@ -73,3 +72,7 @@ group :production do
   gem 'rails_12factor'
   gem 'aws-sdk', '~> 2.3'
 end
+
+# we added these too
+gem 'figaro'
+gem 'fog'
