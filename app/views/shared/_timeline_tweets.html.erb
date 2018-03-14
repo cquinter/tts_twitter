@@ -1,5 +1,0 @@
-<div class="well">
-  <p><%= image_tag tweet.user.avatar.url %> <%= link_to "@#{tweet.user.username}", user_url(id: tweet.user.id) %></p>
-  <p><%= time_ago_in_words(tweet.created_at) %> ago</p>
-  <p><%= tweet.message %></p>
-</div>

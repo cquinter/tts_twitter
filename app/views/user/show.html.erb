@@ -1,33 +1,43 @@
-<table>
-  <tr>
-    <td class="profile-pic">
-      <% if @user.avatar.url %> <!-- this returns true if the user has uploaded a photo -->
-        <%= image_tag @user.avatar.url, width: 150 %>
+<div class="col-md-4">
+  <div class="profile-pic">
+    <% if @user.avatar.url %> <!-- this returns true if the user has uploaded a photo -->
+      <%= image_tag @user.avatar.url, width: 150 %>
+    <% else %>
+      <%= image_tag 'blank-profile-pic.jpg', width: 150 %>
+    <% end %>
+  </div>
+  <div class="follow-button">
+    <% if @user != current_user %>
+      <% if current_user.following.include?(@user.id.to_s) %>
+        <%= link_to "Following", unfollow_user_url(id: @user.id), class: "btn btn-primary", id: "unfollow_btn" %>
       <% else %>
-        <%= image_tag 'blank-profile-pic.jpg', width: 150 %>
+        <%= link_to "Follow", follow_user_url(id: @user.id), class: "btn btn-info" %>
       <% end %>
-    </td>
-    <td class="profile-info">
-      <h3>@<%= @user.username %></h3>
-      <p><strong>Name:</strong> <%= @user.name %></p>
-      <p><strong>City:</strong> <%= @user.city %>, <%= @user.state %></p>
-      <p><strong>Email:</strong> <%= @user.email %></p>
-      <p><strong>Bio:</strong> <%= @user.bio %></p>
-      <% if @user != current_user %>
-        <% if current_user.following.include?(@user.id.to_s) %>
-          <%= link_to "Following", unfollow_user_url(id: @user.id), class: "btn btn-primary", id: "unfollow_btn" %>
-        <% else %>
-          <%= link_to "Follow", follow_user_url(id: @user.id), class: "btn btn-info" %>
-        <% end %>
-      <% end %>
-    </td>
-  </tr>
-</table>
+    <% end %>
+  </div>
+  <div class="profile-info">
+    <h3>@<%= @user.username %></h3>
+    <p><strong>Name:</strong> <%= @user.name %></p>
+    <p><strong>City:</strong> <%= @user.city %>, <%= @user.state %></p>
+    <p><strong>Email:</strong> <%= @user.email %></p>
+    <p><strong>Bio:</strong> <%= @user.bio %></p>
+  </div>
+</div>
 
-<% if @user == current_user %>
-  <%= render 'new_tweet', tweet: @tweet %>
-<% end %>
-
-<% @user.tweets.each do |tweet| %>
-  <%= render 'shared/profile_tweets', tweet: tweet %>
-<% end %>
+<div class="col-md-8">
+  <div class="profile-tweets">
+    <% if @user == current_user %>
+      <%= render 'new_tweet', tweet: @tweet %>
+    <% end %>
+    <% @user.tweets.each do |tweet| %>
+      <div class="well">
+        <p><%= link_to "@#{tweet.user.username}", user_url(id: tweet.user.id) %>
+        <% if current_user == tweet.user %>
+          <%= link_to "Delete", delete_tweet_url(id: tweet.id), method: :delete, class: "btn btn-default btn-md" %>
+        <% end %></p>
+        <p><%= time_ago_in_words(tweet.created_at) %> ago</p>
+        <p><%= tweet.message %></p>
+      </div>
+    <% end %>
+  </div>
+</div>

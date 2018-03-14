@@ -11,9 +11,8 @@ gem 'devise'
 gem 'bootstrap-sass'
 # we added this for icons
 gem 'font-awesome-rails'
-# we added these for uploading capabilities
-gem 'carrierwave'
-gem 'paperclip'
+# we added this for uploading capabilities
+gem 'carrierwave', '~> 1.0'
 # we added this too
 gem 'jquery-rails'
 # we added this to generate user data
@@ -64,14 +63,12 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
 
-# Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
-
 group :production do
   gem 'pg'
-  gem 'rails_12factor'
-  gem 'aws-sdk', '~> 2.3'
 end
+
+# Windows does not include zoneinfo files, so bundle the tzinfo-data gem
+gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # we added these too
 gem 'figaro'

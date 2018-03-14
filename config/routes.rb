@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   devise_for :users
 
-  root "tweet#index"
+  root "user#redirect_to_timeline"
 
   get "/timeline" => "tweet#timeline", as: :timeline
 
@@ -16,6 +16,6 @@ Rails.application.routes.draw do
 
   post "/tweet/create" => "tweet#create", as: :create_tweet
 
-  delete "/tweet/delete" => "tweet#delete", as: :delete_tweet
+  delete "/tweet/delete/:id" => "tweet#delete", as: :delete_tweet
 
 end

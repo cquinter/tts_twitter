@@ -10,25 +10,19 @@
   </head>
 
   <body>
-    <nav class="navbar navbar-default navbar-fixed-top">
-      <div class="container">
-        <%= link_to "Home", root_url, class: "navbar-text" %>
-        <% if user_signed_in?  %>
-          <%= link_to "Users", tweet_users_url, class: "navbar-text" %>
-          <%= link_to "Timeline", timeline_url, class: "navbar-text" %>
-          <%= link_to "Profile", user_url(id: current_user.id), class: "navbar-text" %>
-            <p class="navbar-user-info">
-              Signed in as @<%= current_user.username %> <span> </span>
-              <%= link_to "Sign Out", destroy_user_session_url, method: :delete, class: "btn btn-info navbar-btn" %>
-            </p>
-          <% else %>
-            <p class="navbar-user-info">
-              <%= link_to "Sign In", new_user_session_url, class: "btn btn-info navbar-btn" %>
-            </p>
-          <% end %>
+    <% if user_signed_in?  %>
+      <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <%= link_to "Timeline", timeline_url, class: "navbar-text" %>
+            <%= link_to "Users", tweet_users_url, class: "navbar-text" %>
+            <%= link_to "Profile", user_url(id: current_user.id), class: "navbar-text" %>
+              <p class="navbar-user-info">
+                Signed in as @<%= current_user.username %> <span> </span>
+                <%= link_to "Sign Out", destroy_user_session_url, method: :delete, class: "btn btn-info navbar-btn" %>
+              </p>
         </div>
-      </div>
-    </nav>
+      </nav>
+    <% end %>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     <div class="container">

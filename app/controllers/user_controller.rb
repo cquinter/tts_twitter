@@ -11,6 +11,10 @@ class UserController < ApplicationController
     @tweet = Tweet.new
   end
 
+  def redirect_to_timeline
+    redirect_to timeline_url
+  end
+
   def follow
     current_user.following.push(params[:id])
     current_user.save!

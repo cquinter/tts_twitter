@@ -19,11 +19,11 @@
 @import "font-awesome";
 
 body.welcome-page {
-  background-image: url("background.png");
+  background-image: url("background_1.png");
 }
 
 body {
-  background-color: #c0deed;
+  background-image: url("background_2.png");
 }
 
 .navbar-user-info {
@@ -36,7 +36,8 @@ span {
 }
 
 .jumbotron {
-  margin-top: 50px;
+  padding: 60px;
+  margin-top: 30px;
 }
 
 .thumbnail img {
@@ -48,17 +49,18 @@ span {
 }
 
 .profile-pic img {
-  margin-top: 20px;
-  margin-right: 20px;
-  margin-bottom: 20px;
   height: 200px;
   width: 200px;
   border-radius: 5px;
   object-fit: cover;
+  margin-top: 20px;
 }
 
 .profile-info {
-  padding-bottom: 20px;
+}
+
+.follow-button {
+  margin-top: 20px;
 }
 
 div .well img {
@@ -73,10 +75,30 @@ div .well img {
 }
 
 textarea {
-    resize: none;
-    margin-bottom: 15px;
+  resize: none;
+  margin-bottom: 15px;
 }
 
 .row {
   text-align: center;
+}
+
+.btn-md {
+  float: right;
+}
+
+.profile-tweets {
+  height: 600px;
+  overflow: scroll;
+  margin-top: 20px;
+}
+
+.timeline-tweets {
+  height: 600px;
+  overflow: scroll;
+  margin-top: 20px;
+}
+.users {
+  height: 600px;
+  overflow: scroll;
 }

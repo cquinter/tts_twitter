@@ -1,20 +1,26 @@
 <br>
 
-<% @users.in_groups_of(3) do |group| %>
-  <div class="row">
-    <% group.each do |user| %>
-      <div class="col-xs-12 col-sm-12 col-md-4">
-        <div class="thumbnail">
-          <%= image_tag user.avatar.url %>
-          <div class="caption">
-            <%= link_to "@#{user.username}", user_url(id: user.id) %>
-            <br>
-            <%= user.name %>
-            <br>
-            <%= user.city %>, <%= user.state %>
+<div class="users">
+  <% @users.in_groups_of(3, false) do |group| %> <!-- look here for more info on the "false"... https://makandracards.com/makandra/976-split-an-array-into-groups -->
+    <div class="row">
+      <% group.each do |user| %>
+        <div class="col-xs-12 col-sm-12 col-md-4">
+          <div class="thumbnail">
+            <% if user.avatar.url %> <!-- this returns true if the user has uploaded a photo -->
+              <%= image_tag user.avatar.url, width: 150 %>
+            <% else %>
+              <%= image_tag 'blank-profile-pic.jpg', width: 150 %>
+            <% end %>
+            <div class="caption">
+              <%= link_to "@#{user.username}", user_url(id: user.id) %>
+              <br>
+              <%= user.name %>
+              <br>
+              <%= user.city %>, <%= user.state %>
+            </div>
           </div>
         </div>
-      </div>
-    <% end %>
-  </div>
-<% end %>
+      <% end %>
+    </div>
+  <% end %>
+</div>

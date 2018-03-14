@@ -17,6 +17,12 @@ class TweetController < ApplicationController
    redirect_to user_path(id: current_user.id)
   end
 
+  def delete
+    tweet = Tweet.find(params[:id])
+    tweet.destroy
+    redirect_to user_path(id: current_user.id)
+  end
+
   private
 
   def tweet_params
