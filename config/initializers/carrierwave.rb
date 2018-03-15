@@ -2,11 +2,9 @@ CarrierWave.configure do |config|
   config.fog_provider = 'fog/aws'                        # required
   config.fog_credentials = {
     provider:              'AWS',                        # required
-    aws_access_key_id:     "#{ENV['AWS_ACCESS_KEY_ID']}",      # required
-    aws_secret_access_key: "#{ENV['AWS_SECRET_ACCESS_KEY']}",  # required
-    endpoint:              'https://s3.us-east-2.amazonaws.com', # optional, defaults to nil
-    region:                "#{ENV['S3_REGION']}"
+    aws_access_key_id:     ENV["amazon_api_key"],        # required
+    aws_secret_access_key: ENV["amazon_secret_key"],     # required
+    region:                'us-east-1',                  # optional, defaults to 'us-east-1'
   }
-  config.fog_directory  = "#{ENV['S3_BUCKET_NAME']}"                          # required
-  config.fog_public     = false                                        # optional, defaults to true
+  config.fog_directory  = 'tts-winter-chrissy'           # required
 end

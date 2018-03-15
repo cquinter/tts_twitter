@@ -72,5 +72,4 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # we added these too
 gem 'figaro'
-gem 'fog'
 gem 'fog-aws'
