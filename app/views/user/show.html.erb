@@ -11,7 +11,7 @@
       <% if current_user.following.include?(@user.id.to_s) %>
         <%= link_to "Following", unfollow_user_url(id: @user.id), class: "btn btn-primary", id: "unfollow_btn" %>
       <% else %>
-        <%= link_to "Follow", follow_user_url(id: @user.id), class: "btn btn-info" %>
+        <%= link_to "Follow", follow_user_url(id: @user.id), class: "btn btn-primary" %>
       <% end %>
     <% end %>
   </div>

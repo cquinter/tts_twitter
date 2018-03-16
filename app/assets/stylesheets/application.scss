@@ -19,7 +19,8 @@
 @import "font-awesome";
 
 body.welcome-page {
-  background-image: url("background_1.png");
+  background-image: url("background_1.jpg");
+  background-size: cover;
 }
 
 body {
@@ -36,8 +37,15 @@ span {
 }
 
 .jumbotron {
-  padding: 60px;
-  margin-top: 30px;
+  margin-top: 40px;
+}
+
+h1 {
+  text-align: center;
+}
+
+.thumbnail {
+  background-color: #f6f6f6;
 }
 
 .thumbnail img {

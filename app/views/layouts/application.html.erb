@@ -18,7 +18,7 @@
             <%= link_to "Profile", user_url(id: current_user.id), class: "navbar-text" %>
               <p class="navbar-user-info">
                 Signed in as @<%= current_user.username %> <span> </span>
-                <%= link_to "Sign Out", destroy_user_session_url, method: :delete, class: "btn btn-info navbar-btn" %>
+                <%= link_to "Sign Out", destroy_user_session_url, method: :delete, class: "btn btn-primary navbar-btn" %>
               </p>
         </div>
       </nav>

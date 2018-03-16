@@ -32,7 +32,7 @@ end
 
 puts "Generating Users"
 
-20.times do |i| #i here is the number of the current iteration of the 20 times (we did this so that we could refer to it in the avatar line below since the pictures are numbered 1 through 20)
+10.times do |i| #i here is the number of the current iteration of the 20 times (we did this so that we could refer to it in the avatar line below since the pictures are numbered 1 through 20)
 
   putc "."
 
@@ -49,7 +49,7 @@ puts "Generating Users"
     password_confirmation: password
   )
 
-  u.avatar = Rails.root.join("app/assets/images/stock-profile-#{i + 1}.jpeg").open
+  u.avatar = Rails.root.join("app/assets/images/stock-profile-#{i + 1}.jpg").open
 
   10.times do
     u.tweets.create(

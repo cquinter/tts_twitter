@@ -1,8 +1,7 @@
 <body class="welcome-page">
 
   <div class="jumbotron">
-    <h1>Welcome to Twitter</h1>
-    <h3>Let's get social!</h3>
+    <h1>Welcome, Let's Get Social!</h1>
 
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <div class="field">
@@ -23,7 +22,7 @@
       <% end -%>
 
       <div class="actions">
-        <%= f.submit "Log in", class: "btn btn-info" %>
+        <%= f.submit "Log in", class: "btn btn-primary" %>
       </div>
     <% end %>
 
