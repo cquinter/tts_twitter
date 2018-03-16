@@ -6,21 +6,23 @@
       <%= image_tag 'blank-profile-pic.jpg', width: 150 %>
     <% end %>
   </div>
-  <div class="follow-button">
-    <% if @user != current_user %>
-      <% if current_user.following.include?(@user.id.to_s) %>
-        <%= link_to "Following", unfollow_user_url(id: @user.id), class: "btn btn-primary", id: "unfollow_btn" %>
-      <% else %>
-        <%= link_to "Follow", follow_user_url(id: @user.id), class: "btn btn-primary" %>
-      <% end %>
-    <% end %>
-  </div>
   <div class="profile-info">
     <h3>@<%= @user.username %></h3>
     <p><strong>Name:</strong> <%= @user.name %></p>
     <p><strong>City:</strong> <%= @user.city %>, <%= @user.state %></p>
     <p><strong>Email:</strong> <%= @user.email %></p>
     <p><strong>Bio:</strong> <%= @user.bio %></p>
+  </div>
+  <div class="follow-button">
+    <% if @user != current_user %>
+      <% if current_user.following.include?(@user.id.to_s) %>
+        <%= link_to "Unfollow", unfollow_user_url(id: @user.id), class: "btn btn-primary", id: "unfollow_btn" %>
+      <% else %>
+        <%= link_to "Follow", follow_user_url(id: @user.id), class: "btn btn-primary" %>
+      <% end %>
+    <% else %>
+      <%= link_to "Edit Profile", edit_user_registration_url, method: :get, class: "btn btn-primary navbar-btn" %>
+    <% end %>
   </div>
 </div>
 

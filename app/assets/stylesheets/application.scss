@@ -18,13 +18,8 @@
 @import "bootstrap";
 @import "font-awesome";
 
-body.welcome-page {
-  background-image: url("background_1.jpg");
-  background-size: cover;
-}
-
 body {
-  background-image: url("background_2.png");
+  background-color: #c0deed;
 }
 
 .navbar-user-info {
@@ -42,6 +37,11 @@ span {
 
 h1 {
   text-align: center;
+}
+
+h4 {
+  text-align: center;
+  padding: 20px;
 }
 
 .thumbnail {
@@ -106,6 +106,7 @@ textarea {
   overflow: scroll;
   margin-top: 20px;
 }
+
 .users {
   height: 600px;
   overflow: scroll;

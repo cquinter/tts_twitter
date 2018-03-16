@@ -15,20 +15,20 @@
 //= require turbolinks
 //= require bootstrap-sprockets
 //= require_tree .
-
-$(document).ready(function() {
-
-	$('#unfollow_btn').hover(function() {
-		// Hovering
-		$(this).removeClass('btn-primary');
-		$(this).addClass('btn-danger');
-		$(this).html("Unfollow");
-
-	}, function() {
-		// No longer hovering
-		$(this).html("Following");
-		$(this).removeClass('btn-danger');
-		$(this).addClass('btn-primary');
-	});
-
-});
+//
+// $(document).ready(function() {
+//
+// 	$('#unfollow_btn').hover(function() {
+// 		// Hovering
+// 		$(this).removeClass('btn-primary');
+// 		$(this).addClass('btn-danger');
+// 		$(this).html("Unfollow");
+//
+// 	}, function() {
+// 		// No longer hovering
+// 		$(this).html("Following");
+// 		$(this).removeClass('btn-danger');
+// 		$(this).addClass('btn-primary');
+// 	});
+// 
+// });
