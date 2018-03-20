@@ -27,19 +27,23 @@
 </div>
 
 <div class="col-md-8">
-  <div class="profile-tweets">
-    <% if @user == current_user %>
-      <%= render 'new_tweet', tweet: @tweet %>
-    <% end %>
-    <% @user.tweets.each do |tweet| %>
-      <div class="well">
-        <p><%= link_to "@#{tweet.user.username}", user_url(id: tweet.user.id) %>
-        <% if current_user == tweet.user %>
-          <%= link_to "Delete", delete_tweet_url(id: tweet.id), method: :delete, class: "btn btn-default btn-md" %>
-        <% end %></p>
-        <p><%= time_ago_in_words(tweet.created_at) %> ago</p>
-        <p><%= tweet.message %></p>
-      </div>
-    <% end %>
-  </div>
+  <% if current_user.following.include?(@user.id.to_s) || current_user == @user %>
+    <div class="profile-tweets">
+      <% if @user == current_user %>
+        <%= render 'new_tweet', tweet: @tweet %>
+      <% end %>
+      <% @user.tweets.each do |tweet| %>
+        <div class="well">
+          <p><%= link_to "@#{tweet.user.username}", user_url(id: tweet.user.id) %>
+          <% if current_user == tweet.user %>
+            <%= link_to "Delete", delete_tweet_url(id: tweet.id), method: :delete, class: "btn btn-default btn-md" %>
+          <% end %></p>
+          <p><%= time_ago_in_words(tweet.created_at) %> ago</p>
+          <p><%= tweet.message %></p>
+        </div>
+      <% end %>
+    </div>
+  <% else %>
+    <h4>You must click the follow button to see this user's posts.  Go ahead, don't be shy!</h4>
+  <% end %>
 </div>

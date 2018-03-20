@@ -1,6 +1,6 @@
 <% current_user.following.delete(current_user.id.to_s) %>
   <% if current_user.following == [] %>
-    <h4>Use the links above to get started by following other users and writing your own posts!</h4>
+    <h4>Click on the links above to get started by following other users and writing your own posts!</h4>
   <% end %>
 <% current_user.following.push(current_user.id.to_s) %>
 
