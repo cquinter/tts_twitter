@@ -73,3 +73,8 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 # we added these too
 gem 'figaro'
 gem 'fog-aws'
+
+# we added these in Next Level Rails to practice testing
+gem 'rspec-rails'
+gem 'factory_bot_rails'
+gem 'rails-controller-testing'

@@ -11,4 +11,8 @@ class User < ApplicationRecord
 
   serialize :following, Array
 
+  def location
+    "#{city}, #{state}"
+  end
+
 end
