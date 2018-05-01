@@ -11,6 +11,8 @@ class User < ApplicationRecord
 
   serialize :following, Array
 
+  validates :username, uniqueness: true
+
   def location
     "#{city}, #{state}"
   end

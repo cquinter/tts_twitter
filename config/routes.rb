@@ -10,6 +10,8 @@ Rails.application.routes.draw do
 
   get "/users/:id" => "user#show", as: :user
 
+  # get "/users/profile" => "user#profile"
+
   get "/users/follow/:id" => "user#follow", as: :follow_user
 
   get "/users/unfollow/:id" => "user#unfollow", as: :unfollow_user

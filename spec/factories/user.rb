@@ -7,6 +7,8 @@ FactoryBot.define do
     city(Faker::Address.city)
     state(Faker::Address.state)
     bio(Faker::Lorem.paragraph)
+    password("123456")
+    password_confirmation("123456")
   end
 
 end

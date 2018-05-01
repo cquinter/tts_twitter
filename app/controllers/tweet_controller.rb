@@ -8,6 +8,11 @@ class TweetController < ApplicationController
   def timeline
     ids = current_user.following
     ids.push(current_user.id.to_s)
+    ids.each do |id|
+      if User.find_by(id: id.to_i) == nil
+        ids.delete(id)
+      end
+    end
     @tweets = Tweet.where(user_id: ids).order(created_at: :desc)
   end
 

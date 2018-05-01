@@ -67,14 +67,17 @@ group :production do
   gem 'pg'
 end
 
+# we made this group and added these gems in Next Level Rails to practice testing
+group :test do
+  gem 'rspec-rails'
+  gem 'factory_bot_rails'
+  gem 'rails-controller-testing'
+  gem 'shoulda-matchers', '~> 3.1'
+end
+
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
-# we added these too
+# we added these too for deployment
 gem 'figaro'
 gem 'fog-aws'
-
-# we added these in Next Level Rails to practice testing
-gem 'rspec-rails'
-gem 'factory_bot_rails'
-gem 'rails-controller-testing'
